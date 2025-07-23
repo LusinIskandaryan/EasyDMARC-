@@ -2,7 +2,7 @@ import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 import { UserService } from '../../services/user.service';
 import { IndustryTypeEnum } from '../../core/enums/industry-type.enum';
@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit{
     email: '',
     password: '',
     confirmPassword: '',
-    industry: IndustryTypeEnum.marketing,
-    experienceInYears: 0,
-    yourRole: UserRoleEnum.developer,
+    industry: null as unknown as IndustryTypeEnum,
+    experienceInYears: null as unknown as number,
+    yourRole: null as unknown as UserRoleEnum,
     aboutUs: '',
   });
 

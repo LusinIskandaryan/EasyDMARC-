@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { checkStepGuard } from './guards/check-step.guard';
-
 @Component({
   selector: 'app-root',
   standalone: true,

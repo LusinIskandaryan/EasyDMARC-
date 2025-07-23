@@ -7,23 +7,25 @@ export const authRoutes: Routes = [
     { 
         path: '', 
         loadComponent: () => import('./auth.component').then(m => m.AuthComponent),
+        canActivateChild: [ checkStepGuard ],
         children: [
              {
                 path: 'step1',
+                data: { step: UserRegistrationStepEnum.Step1 },
                 loadComponent: () =>
                     import('./components/step1/step1.component').then((m) => m.Step1Component),
             },
             {
                 path: 'step2',
                 canActivate: [ checkStepGuard ],
-                data: { step: UserRegistrationStepEnum.Step1 },
+                data: { step: UserRegistrationStepEnum.Step2 },
                 loadComponent: () =>
                     import('./components/step2/step2.component').then((m) => m.Step2Component),
             },
             {
                 path: 'step3',
                 canActivate: [ checkStepGuard ],
-                data: { step: UserRegistrationStepEnum.Step2 },
+                data: { step: UserRegistrationStepEnum.Step3 },
                 loadComponent: () =>
                     import('./components/step3/step3.component').then((m) => m.Step3Component),
             },

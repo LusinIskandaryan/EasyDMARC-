@@ -11,7 +11,7 @@ export const routes: Routes = [
     { 
         path: 'home',
         canActivate: [ checkStepGuard ],
-        data: { step: UserRegistrationStepEnum.Step3 },
+        data: { step: UserRegistrationStepEnum.Done },
         loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
     },
     {
