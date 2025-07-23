@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Choose industry</mat-label>
+        <mat-select required formControlName="industry">
+            @for(item of industries; track item) {
+                <mat-option [value]="item">{{item}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+     <mat-form-field>
+        <mat-label>Experience in years</mat-label>
+        <input matInput type="number" placeholder="Experience in years" formControlName="experienceInYears" required>
+        @if(form.get('experienceInYears')?.errors?.['numberBetween']) {
+            <mat-hint>Experience must be between 0 and 50.</mat-hint>
+        }
+    </mat-form-field>
+
+     <mat-form-field>
+        <mat-label>Choose Your role</mat-label>
+        <mat-select required formControlName="yourRole">
+            @for(item of roles; track item) {
+                <mat-option value="item">{{item}}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <button matButton (click)="navigateBack($event)">Back</button>
+        <button matButton (click)="navigate($event)" [disabled]="!form.valid">Next</button>
+    </div>
+</form>

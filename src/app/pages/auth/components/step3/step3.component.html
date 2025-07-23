@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+     <mat-form-field>
+        <mat-label>Experience in years</mat-label>
+        <textarea matInput
+            required
+            formControlName="aboutUs"
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+
+    <div>
+        <button matButton (click)="navigateBack($event)">Back</button>
+        <button matButton (click)="navigate($event)" [disabled]="!form.valid">Next</button>
+    </div>
+</form>

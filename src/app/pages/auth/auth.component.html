@@ -1,0 +1,6 @@
+<mat-stepper [linear]="true" (selectionChange)="navigate($event)" [selectedIndex]="currentStep()">
+    @for (item of steps; track item.id) {
+        <mat-step [label]="item.label"></mat-step>
+    }
+</mat-stepper>
+<router-outlet />
